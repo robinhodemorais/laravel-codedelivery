@@ -20,7 +20,9 @@ class Client extends Model implements Transformable
     ];
 
     public function user(){
-        return $this->hasOne(User::class);
+        //...User::class, 'id', 'user_id'
+        //vai pegar o id da tabela user e relacionar com o user_id da tabela client desse Model
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
 }
