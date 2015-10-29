@@ -28,9 +28,6 @@
                         <a href="{{route('admin.clients.edit',['id'=>$client->id])}}" class="btn btn-default btn-sm">
                             Editar
                         </a>
-                        <a href="{{route('admin.clients.destroy',['id'=>$client->id])}}" class="btn btn-default btn-sm">
-                            Remover
-                        </a>
                     </td>
                 </tr>
             @endforeach
