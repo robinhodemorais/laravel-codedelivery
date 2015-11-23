@@ -33,7 +33,7 @@ class CheckoutController extends Controller
         $this->repository = $repository;
         $this->userRepository = $userRepository;
         $this->productRepository = $productRepository;
-        $this->orderService = $service;
+        $this->service = $service;
     }
 
 
@@ -56,7 +56,10 @@ class CheckoutController extends Controller
     public function store(Request $request){
         $data = $request->all();
         $clientId = $this->userRepository->find(Auth::user()->id)->client->id;
+
         $data['client_id'] = $clientId;
+
+        //dd($data);
         $this->service->create($data);
 
         return redirect()->route('customer.order.index');
