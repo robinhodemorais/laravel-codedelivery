@@ -102,7 +102,7 @@ class OrderService
             //caso não deu certo
         } catch(\Exception $e) {
             //não grava os dados
-           \DB::roolback();
+            \DB::rollback();
             throw $e;
         }
     }

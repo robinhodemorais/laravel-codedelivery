@@ -26,7 +26,6 @@
             </tbody>
         </table>
 
-        {!! $cupoms->render() !!}
     </div>
 
     //gera o paginador
