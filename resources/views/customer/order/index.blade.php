@@ -1,4 +1,4 @@
-@extends('app)
+@extends('app')
 
 @section('content')
     <div class="container">
@@ -28,6 +28,6 @@
 
     </div>
 
-    //gera o paginador
+
     {!! $orders->render()  !!}
 @endsection
