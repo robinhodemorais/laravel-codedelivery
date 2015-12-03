@@ -55,4 +55,18 @@ Route::group(['prefix'=>'customer', 'middleware'=>'auth.checkrole:client', 'as'=
 
 });
 
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
 
+
+Route::group(['prefix'=>'api','middleware'=>'oauth', 'as'=>'api.'], function() {
+    Route::get('teste',function(){
+       return [
+           'id' => 1,
+           'client' => 'Robinho de Morais',
+           'total' => 10
+
+       ];
+    });
+});

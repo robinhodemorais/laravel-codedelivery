@@ -12,6 +12,8 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        'oauth/access_token',
+        //qualquer rota que tiver api ele vai barrar
+        'api/*'
     ];
 }
